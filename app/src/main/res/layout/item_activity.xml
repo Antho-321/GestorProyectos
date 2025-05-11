@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <!-- Nombre de la tarea -->
+    <TextView
+        android:id="@+id/tvTaskName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Tarea ejemplo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnEditTask"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Fechas de la tarea -->
+    <TextView
+        android:id="@+id/tvTaskDates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="2025-05-01 → 2025-05-05"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnEditTask"
+        app:layout_constraintTop_toBottomOf="@id/tvTaskName" />
+
+    <!-- Estado de la tarea -->
+    <TextView
+        android:id="@+id/tvTaskState"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Planificado"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnEditTask"
+        app:layout_constraintTop_toBottomOf="@id/tvTaskDates" />
+
+    <!-- Botón Editar -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnEditTask"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:srcCompat="@drawable/ic_edit_24"
+        app:tint="?attr/colorOnSurface"
+        android:contentDescription="Editar tarea"
+        android:padding="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDeleteTask"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Botón Eliminar -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnDeleteTask"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        app:srcCompat="@drawable/ic_delete_24"
+        app:tint="?attr/colorOnSurface"
+        android:contentDescription="Eliminar tarea"
+        android:padding="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">GestorProyectos</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="register_text">¿No tienes cuenta? Regístrate</string>
+    <string name="login_link_text">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="email_body"><![CDATA[
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+      </head>
+      <body style="font-family:Garamond,serif;">
+        <h1 style="text-align:center;">%1$s</h1>
+        <p style="font-size:18px;text-align:justify;">
+          Estimado usuario:<br/><br/>%2$s
+        </p>
+        <p style="font-size:22px;text-align:center;"><strong>%3$s</strong></p>
+        <p style="font-size:18px;">
+          %4$s<br/><br/>Atentamente,<br/><em>Anthos</em>
+        </p>
+      </body>
+    </html>
+  ]]></string>
+    <string-array name="task_states">
+        <item>Planificado</item>
+        <item>En ejecución</item>
+        <item>Realizado</item>
+    </string-array>
+</resources>
