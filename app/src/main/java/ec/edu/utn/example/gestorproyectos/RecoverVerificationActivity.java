@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets; // Import Insets
@@ -32,11 +33,24 @@ public class RecoverVerificationActivity extends AppCompatActivity {
     public void onSendCodeClicked(View view) {
         EditText emailEditTextRegister = findViewById(R.id.emailEditTextRecover);
         String email = emailEditTextRegister.getText().toString().trim();
-        Intent intent = new Intent(
-                RecoverVerificationActivity.this,
-                RecoverInputCodeActivity.class
-        );
-        intent.putExtra("correo", email);
-        startActivity(intent);
+        GlobalDatabaseProvider app =
+                (GlobalDatabaseProvider) view.getContext().getApplicationContext();
+        SqlAdmin sqlAdmin = app.getHelper();
+        Usuarios usuariosRepo = new Usuarios(sqlAdmin);
+        int userId = usuariosRepo.getUserIdByEmail(email);
+        if (userId < 0) {
+            Toast.makeText(
+                    view.getContext(),
+                    "El correo ingresado no está registrado",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }else{
+            Intent intent = new Intent(
+                    RecoverVerificationActivity.this,
+                    RecoverInputCodeActivity.class
+            );
+            intent.putExtra("correo", email);
+            startActivity(intent);
+        }
     }
 }

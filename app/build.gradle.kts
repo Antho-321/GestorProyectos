@@ -16,6 +16,12 @@ android {
         versionName = "1.0"
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "USER_EMAIL",    "\"pankey.ibarra@gmail.com\"")
+        buildConfigField("String", "CLIENT_ID",     "\"192282288096-u9r7es2bg7js56q1k3c8i7tncvi0mnq8.apps.googleusercontent.com\"")
+        buildConfigField("String", "CLIENT_SECRET", "\"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\"")
+        buildConfigField("String", "REFRESH_TOKEN", "\"1//04SAkNR_lk4M6CgYIARAAGAQSNwF-L9Ir86OZRosnySypsTpESNRS9ZBJnNipdz9lN9L_4DOQBxebtBvaZInJF8T5b78ZNXfRN8w\"")
+        buildConfigField("String", "SCOPE",         "\"https://mail.google.com/\"")
     }
 
     packaging {
@@ -46,8 +52,9 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
-        compose = true
+        buildConfig = true                             // ← fuerza la generación
     }
+
 }
 
 dependencies {
