@@ -25,7 +25,6 @@ import java.util.Properties;
 
 public class GmailOAuth2Sender {
 
-    // ─────────── Read from BuildConfig ───────────
     private static final String USER_EMAIL    = BuildConfig.USER_EMAIL;
     private static final String CLIENT_ID     = BuildConfig.CLIENT_ID;
     private static final String CLIENT_SECRET = BuildConfig.CLIENT_SECRET;
